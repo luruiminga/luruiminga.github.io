@@ -152,6 +152,73 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-鼠标滚轮实现图片的放大和缩小" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/25/%E9%BC%A0%E6%A0%87%E6%BB%9A%E8%BD%AE%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E7%9A%84%E6%94%BE%E5%A4%A7%E5%92%8C%E7%BC%A9%E5%B0%8F/">&#39;鼠标滚轮实现图片的放大和缩小&#39;</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/25/%E9%BC%A0%E6%A0%87%E6%BB%9A%E8%BD%AE%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E7%9A%84%E6%94%BE%E5%A4%A7%E5%92%8C%E7%BC%A9%E5%B0%8F/" class="archive-article-date">
+  	<time datetime="2020-05-25T05:47:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>####具体的解释都在代码中</p>
+<hr>
+<p><strong>这是html中的</strong><br>onmousewheel是鼠标的滚轮事件,带参数是将事件对象传递给方法<br><code>&lt;img id=&quot;img&quot; src=&quot;../images/c1.jpg&quot; onmousewheel=&quot;wheel(event)&quot;&gt;</code></p>
+<p><strong>这是js中的</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#x2F;&#x2F;存放图片缩放比例的值</span><br><span class="line">let zoomVal &#x3D; 1;    </span><br><span class="line">&#x2F;&#x2F;图片缩放</span><br><span class="line">function wheel(event) &#123;</span><br><span class="line">    var o &#x3D; document.getElementById(&#39;img&#39;)</span><br><span class="line">    &#x2F;&#x2F;阻止页面的鼠标滚动事件</span><br><span class="line">    event.preventDefault();</span><br><span class="line">    &#x2F;&#x2F;将每一次鼠标滚动的值做计算,zoomVal的值越小,缩放比例越小</span><br><span class="line">    zoomVal +&#x3D; event.wheelDelta &#x2F; 1200;</span><br><span class="line">    console.log(zoomVal)</span><br><span class="line">    if (zoomVal &gt;&#x3D; 0.2) &#123;   &#x2F;&#x2F;图片放大不设置上限</span><br><span class="line">        &#x2F;&#x2F;设置图片的比例缩放样式</span><br><span class="line">        o.style.transform &#x3D; &quot;scale(&quot; + zoomVal + &quot;)&quot;;</span><br><span class="line">    &#125; else &#123;    &#x2F;&#x2F;当图片到达设置的最小比例</span><br><span class="line">        zoomVal &#x3D; 0.2; </span><br><span class="line">        o.style.transform &#x3D; &quot;scale(&quot; + zoomVal + &quot;)&quot;;</span><br><span class="line">        &#x2F;&#x2F;返回,停止缩小事件</span><br><span class="line">        return false;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/25/%E9%BC%A0%E6%A0%87%E6%BB%9A%E8%BD%AE%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E7%9A%84%E6%94%BE%E5%A4%A7%E5%92%8C%E7%BC%A9%E5%B0%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-我的第一篇博客文章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
